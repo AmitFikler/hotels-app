@@ -1,7 +1,7 @@
 import React from 'react';
-import { hotelsData } from '../hotelsData';
 
 import { Link } from 'react-router-dom';
+import { hotelslData } from '../hotelsData';
 import { kebabCase } from './helpers/kebabCase';
 import HotelCard from './HotelCard';
 class HotelsGallery extends React.Component {
@@ -9,9 +9,9 @@ class HotelsGallery extends React.Component {
     return (
       <div>
         <ul>
-          {hotelsData.map((hotel) => (
+          {hotelslData.map((hotel) => (
             <Link to={'/' + kebabCase(hotel.name)}>
-              <HotelCard name={hotel.name} img={hotel.img} />
+              <HotelCard key={hotel.name} name={hotel.name} img={hotel.img} />
             </Link>
           ))}
         </ul>

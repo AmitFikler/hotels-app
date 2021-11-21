@@ -1,9 +1,9 @@
 import React from 'react';
 import HotelsGallery from './Components/HotelsGallery';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { kebabCase } from './Components/helpers/kebabCase';
-import { hotelsData } from './hotelsData';
 import HotelPage from './Components/HotelPage';
+import { hotelslData } from './hotelsData';
+import { kebabCase } from './Components/helpers/kebabCase';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +16,19 @@ class App extends React.Component {
         <div>
           <Routes>
             <Route exect path="/" element={<HotelsGallery />} />
+            {hotelslData.map((hotel) => (
+              <Route
+                exact
+                path={'/' + encodeURIComponent(kebabCase(hotel.name))}
+                element={
+                  <HotelPage
+                    key={hotel.name}
+                    name={hotel.name}
+                    street={hotel['street name']}
+                  />
+                }
+              />
+            ))}
           </Routes>
         </div>
       </Router>
