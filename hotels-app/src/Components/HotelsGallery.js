@@ -1,16 +1,18 @@
 import React from 'react';
 import { hotelsData } from '../hotelsData';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import HotelCard from './HotelCard';
-import { kebabCase } from './helpers/kebabCase';
 
+import { Link } from 'react-router-dom';
+import { kebabCase } from './helpers/kebabCase';
+import HotelCard from './HotelCard';
 class HotelsGallery extends React.Component {
   render() {
     return (
       <div>
         <ul>
           {hotelsData.map((hotel) => (
-            <HotelCard name={hotel.name} img="X" />
+            <Link to={'/' + kebabCase(hotel.name)}>
+              <HotelCard name={hotel.name} img={hotel.img} />
+            </Link>
           ))}
         </ul>
       </div>
