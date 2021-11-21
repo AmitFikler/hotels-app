@@ -3,13 +3,13 @@ import React from 'react';
 class HotelCard extends React.Component {
   render() {
     return (
-      <li>
+      <li className="hotel-card">
         {this.props.name}
         <img
           src={this.props.img}
           alt={this.props.name}
-          width="75px"
-          height="60px"
+          width="100%"
+          height="80%"
         />
       </li>
     );

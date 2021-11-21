@@ -25,6 +25,9 @@ class App extends React.Component {
                     key={hotel.name}
                     name={hotel.name}
                     street={hotel['street name']}
+                    img={hotel.img}
+                    number={hotel.number}
+                    phone={hotel.phone}
                   />
                 }
               />

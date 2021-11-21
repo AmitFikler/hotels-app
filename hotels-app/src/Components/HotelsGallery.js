@@ -8,6 +8,7 @@ class HotelsGallery extends React.Component {
   render() {
     return (
       <div>
+        <h1>מלונות בחיפה</h1>
         <ul>
           {hotelslData.map((hotel) => (
             <Link to={'/' + kebabCase(hotel.name)}>
